@@ -1,63 +1,52 @@
 import { NavLink } from "react-router";
 import menu from "../config/menu.json";
+import Theme from "./Theme";
 
 function Navbar() {
   return (
-    <div className="drawer">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
-        {/* Navbar */}
-        <div className="navbar w-full bg-base-300">
-          <div className="flex-none lg:hidden">
-            <label
-              htmlFor="my-drawer-3"
-              aria-label="open sidebar"
-              className="btn btn-square btn-ghost"
+    <div className="navbar bg-base-100">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                className="inline-block h-6 w-6 stroke-current"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </label>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
           </div>
-          <div className="mx-2 flex-1 px-2">MW</div>
-          <div className="hidden flex-none lg:block">
-            <ul className="menu menu-horizontal">
-              {/* Navbar menu content here */}
-              {menu.main.map((item) => (
-                <li key={item.url}>
-                  <NavLink to={item.url}>{item.name}</NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <ul
+            tabIndex={0}
+            className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
+          >
+            {menu.main.map((item) => (
+              <li key={item.url}>
+                <NavLink to={item.url}>{item.name}</NavLink>
+              </li>
+            ))}
+          </ul>
         </div>
-        {/* Page content here */}
-        Content
+        <a className="text-xl">mw</a>
       </div>
-      <div className="drawer-side">
-        <label
-          htmlFor="my-drawer-3"
-          aria-label="close sidebar"
-          className="drawer-overlay"
-        ></label>
-        <ul className="menu min-h-full w-80 bg-base-200 p-4">
-          {/* Sidebar content here */}
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
           {menu.main.map((item) => (
             <li key={item.url}>
               <NavLink to={item.url}>{item.name}</NavLink>
             </li>
           ))}
         </ul>
+      </div>
+      <div className="navbar-end">
+        <Theme />
       </div>
     </div>
   );
