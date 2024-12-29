@@ -4,17 +4,31 @@ import {
   ArrowPathRoundedSquareIcon,
 } from "@heroicons/react/24/solid";
 import Countdown from "../components/Countdown";
+import PlayCard from "../components/PlayCard";
+import GuessTile from "../components/GuessTile";
 
 function Practice() {
   return (
     <div className="flex h-full flex-col p-4">
-      <div className="flex flex-1 items-center justify-center">
-        <div>
-          <h1>cards</h1>
+      <div className="flex flex-1 items-center justify-center py-4">
+        <div className="flex h-full flex-col">
+          <div className="gap-4 text-center">
+            <div className="mb-4 flex justify-between px-2">
+              <span className="font-semibold">theme</span>
+              <span className="font-semibold">1/15</span>
+            </div>
+            <PlayCard />
+          </div>
+          <div className="mt-auto grid gap-4">
+            <GuessTile />
+            <GuessTile />
+            <GuessTile />
+            <GuessTile />
+          </div>
         </div>
       </div>
 
-      <footer className="mt-auto flex w-full justify-between">
+      <footer className="mx-auto mt-auto flex w-full max-w-md justify-between">
         <div className="flex gap-3">
           <Link to="/" className="btn btn-square">
             <ArrowLeftIcon className="size-6" />
