@@ -1,4 +1,5 @@
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
+import { MenuItem } from "../utils/types";
 import menu from "../config/menu.json";
 import Theme from "./Theme";
 
@@ -27,18 +28,20 @@ function Navbar() {
             tabIndex={0}
             className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
           >
-            {menu.main.map((item) => (
+            {menu.main.map((item: MenuItem) => (
               <li key={item.url}>
                 <NavLink to={item.url}>{item.name}</NavLink>
               </li>
             ))}
           </ul>
         </div>
-        <a className="text-xl">mw</a>
+        <Link to="/" className="text-xl">
+          mw
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
-          {menu.main.map((item) => (
+          {menu.main.map((item: MenuItem) => (
             <li key={item.url}>
               <NavLink to={item.url}>{item.name}</NavLink>
             </li>

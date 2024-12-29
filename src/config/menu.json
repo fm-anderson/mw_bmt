@@ -2,15 +2,23 @@
   "main": [
     {
       "name": "Home",
-      "url": "/"
+      "url": "/",
+      "icon": "HomeIcon"
     },
     {
       "name": "Learn",
-      "url": "learn"
+      "url": "learn",
+      "icon": "AcademicCapIcon"
     },
     {
       "name": "Practice",
-      "url": "practice"
+      "url": "practice",
+      "icon": "PuzzlePieceIcon"
+    },
+    {
+      "name": "Listen",
+      "url": "listen",
+      "icon": "SpeakerWaveIcon"
     }
   ]
 }
