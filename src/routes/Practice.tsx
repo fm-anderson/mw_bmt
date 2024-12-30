@@ -1,13 +1,24 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import {
   ArrowLeftIcon,
   ArrowPathRoundedSquareIcon,
 } from "@heroicons/react/24/solid";
+import data from "../config/data.json";
+import { generateOptions } from "../utils/helper";
+import { Option } from "../utils/types";
 import Countdown from "../components/Countdown";
 import PlayCard from "../components/PlayCard";
 import GuessTile from "../components/GuessTile";
 
 function Practice() {
+  const [correct, setCorrect] = useState<Option | null>(null);
+  const [options, setOptions] = useState<Option[]>([]);
+
+  useEffect(() => {
+    generateOptions(data, setCorrect, setOptions);
+  }, []);
+
   return (
     <div className="flex h-full flex-col p-4">
       <div className="flex flex-1 items-center justify-center py-4">
@@ -17,13 +28,19 @@ function Practice() {
               <span className="font-semibold">theme</span>
               <span className="font-semibold">1/15</span>
             </div>
-            <PlayCard />
+            <PlayCard data={correct} />
           </div>
           <div className="mt-auto grid gap-4">
-            <GuessTile />
-            <GuessTile />
-            <GuessTile />
-            <GuessTile />
+            {options.map((option) => (
+              <button
+                key={option.rank}
+                onClick={() =>
+                  console.log(option.name, option.name === correct?.name)
+                }
+              >
+                <GuessTile option={option} />
+              </button>
+            ))}
           </div>
         </div>
       </div>
