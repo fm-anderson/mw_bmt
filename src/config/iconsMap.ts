@@ -1,12 +1,12 @@
 import {
-  HomeIcon,
+  FolderArrowDownIcon,
   AcademicCapIcon,
   PuzzlePieceIcon,
   SpeakerWaveIcon,
 } from "@heroicons/react/24/solid";
 
 const ICONS_MAP = {
-  HomeIcon,
+  FolderArrowDownIcon,
   AcademicCapIcon,
   PuzzlePieceIcon,
   SpeakerWaveIcon,

@@ -1,11 +1,6 @@
 {
   "main": [
     {
-      "name": "Home",
-      "url": "/",
-      "icon": "HomeIcon"
-    },
-    {
       "name": "Learn",
       "url": "learn",
       "icon": "AcademicCapIcon"
@@ -14,6 +9,11 @@
       "name": "Practice",
       "url": "practice",
       "icon": "PuzzlePieceIcon"
+    },
+    {
+      "name": "Resources",
+      "url": "resources",
+      "icon": "FolderArrowDownIcon"
     },
     {
       "name": "Listen",

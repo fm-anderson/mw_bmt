@@ -14,3 +14,8 @@ export interface Option {
 export interface Data {
   af: Option[];
 }
+
+export interface CountdownProps {
+  counter: number;
+  setCounter: React.Dispatch<React.SetStateAction<number>>;
+}

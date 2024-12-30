@@ -3,7 +3,7 @@ import ICONS_MAP from "../config/iconsMap";
 
 type IconName = keyof typeof ICONS_MAP;
 
-function Card({ data }: { data: MenuItem }): JSX.Element {
+function Card({ data }: { data: MenuItem }) {
   const IconComponent = ICONS_MAP[data.icon as IconName];
 
   return (

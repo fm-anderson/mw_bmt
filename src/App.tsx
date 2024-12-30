@@ -5,7 +5,7 @@ import Listen from "./routes/Listen";
 import Practice from "./routes/Practice";
 import Navbar from "./components/Navbar";
 
-function App(): JSX.Element {
+function App() {
   return (
     <div className="flex h-screen flex-col">
       <Navbar />

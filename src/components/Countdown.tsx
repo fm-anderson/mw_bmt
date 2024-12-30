@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { CountdownProps } from "../utils/types";
 
-function Countdown() {
-  const [counter, setCounter] = useState(90);
-
+function Countdown({ counter, setCounter }: CountdownProps) {
   useEffect(() => {
     if (counter > 0) {
       const timer = setInterval(() => {
@@ -11,14 +10,14 @@ function Countdown() {
 
       return () => clearInterval(timer);
     }
-  }, [counter]);
+  }, [counter, setCounter]);
 
   return (
     <div>
       <span
         className={`countdown text-lg ${counter === 0 ? "text-error" : ""}`}
       >
-        <span style={{ "--value": counter }}></span>
+        <span style={{ "--value": counter } as React.CSSProperties}></span>
       </span>
     </div>
   );
