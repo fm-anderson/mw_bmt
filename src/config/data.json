@@ -1,56 +1,62 @@
 {
   "af": [
     {
-      "name": "Name 1",
+      "name": "Person Fire",
       "rank": "Level1",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery/5.webp"
     },
     {
-      "name": "Name 2",
+      "name": "Ipe Branco",
       "rank": "Level2",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery/4.webp"
     },
     {
-      "name": "Name 3",
+      "name": "Waterfall Kayaker",
       "rank": "Level3",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery/2.webp"
     },
     {
-      "name": "Name 4",
+      "name": "Norway Fjords",
       "rank": "Level4",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery/1.webp"
     },
     {
-      "name": "Name 5",
+      "name": "Colorfull Compass",
       "rank": "Level5",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery3/5_webp_ll.png"
     },
     {
-      "name": "Name 6",
+      "name": "Green Beans Google",
       "rank": "Level6",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery3/4_webp_ll.png"
     },
     {
-      "name": "Name 7",
+      "name": "4 Dices",
       "rank": "Level7",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery3/3_webp_ll.png"
     },
     {
-      "name": "Name 8",
+      "name": "Penguin",
       "rank": "Level8",
       "type": "tEmp",
-      "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+      "img": "https://www.gstatic.com/webp/gallery3/2_webp_ll.png"
     },
     {
-      "name": "Name 9",
+      "name": "Flower",
       "rank": "Level9",
+      "type": "tEmp",
+      "img": "https://www.gstatic.com/webp/gallery3/1_webp_ll.png"
+    },
+    {
+      "name": "Green Shoes",
+      "rank": "Level10",
       "type": "tEmp",
       "img": "https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
     }

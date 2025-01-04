@@ -17,9 +17,15 @@ export const generateOptions = (
   const correctOption = data.af[Math.floor(Math.random() * data.af.length)];
   setCorrect(correctOption);
 
-  const wrongOptions = data.af.filter((item) => item !== correctOption);
-  const randomWrongOptions = shuffleArray(wrongOptions).slice(0, 3);
-  const allOptions = [correctOption, ...randomWrongOptions];
+  const optionsSet = new Set<Option>([correctOption]);
+
+  while (optionsSet.size < 4) {
+    const randomWrongOption =
+      data.af[Math.floor(Math.random() * data.af.length)];
+    optionsSet.add(randomWrongOption);
+  }
+
+  const allOptions = Array.from(optionsSet);
   const shuffledOptions = shuffleArray(allOptions);
   setOptions(shuffledOptions);
 };

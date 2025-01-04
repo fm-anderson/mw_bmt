@@ -18,4 +18,12 @@ export interface Data {
 export interface CountdownProps {
   counter: number;
   setCounter: React.Dispatch<React.SetStateAction<number>>;
+  onTimeout: () => void;
+}
+
+export interface ChoiceButtonProps {
+  option: Option;
+  isCorrect: boolean | null;
+  isClicked: boolean;
+  onClick: (option: Option) => void;
 }

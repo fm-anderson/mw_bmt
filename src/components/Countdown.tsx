@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { CountdownProps } from "../utils/types";
 
-function Countdown({ counter, setCounter }: CountdownProps) {
+function Countdown({ counter, setCounter, onTimeout }: CountdownProps) {
   useEffect(() => {
     if (counter > 0) {
       const timer = setInterval(() => {
@@ -9,8 +9,10 @@ function Countdown({ counter, setCounter }: CountdownProps) {
       }, 1000);
 
       return () => clearInterval(timer);
+    } else {
+      onTimeout();
     }
-  }, [counter, setCounter]);
+  }, [counter, setCounter, onTimeout]);
 
   return (
     <div>
