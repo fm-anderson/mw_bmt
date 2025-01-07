@@ -23,6 +23,7 @@ export interface CountdownProps {
 
 export interface ChoiceButtonProps {
   option: Option;
+  counter: number;
   isCorrect: boolean | null;
   isClicked: boolean;
   onClick: (option: Option) => void;

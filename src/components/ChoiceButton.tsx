@@ -2,14 +2,16 @@ import { ChoiceButtonProps } from "../utils/types";
 
 function ChoiceButton({
   option,
+  counter,
   isCorrect,
   isClicked,
   onClick,
 }: ChoiceButtonProps) {
   const getButtonClass = () => {
-    if (isClicked) {
-      if (isCorrect) return "bg-primary text-primary-content";
-      return "bg-error text-neutral";
+    if (isClicked || counter <= 0) {
+      if (isCorrect)
+        return "bg-primary text-primary-content pointer-events-none";
+      return "bg-error text-neutral pointer-events-none";
     }
     return "bg-base-300";
   };

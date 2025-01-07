@@ -9,23 +9,36 @@ export const shuffleArray = (array: Option[]): Option[] => {
   return shuffled;
 };
 
+let shuffledData: Option[] = [];
+
+export const initializeGame = (data: Data) => {
+  shuffledData = shuffleArray(data.af);
+};
+
 export const generateOptions = (
   data: Data,
   setCorrect: React.Dispatch<React.SetStateAction<Option | null>>,
   setOptions: React.Dispatch<React.SetStateAction<Option[]>>,
 ) => {
-  const correctOption = data.af[Math.floor(Math.random() * data.af.length)];
-  setCorrect(correctOption);
+  const correctOption = shuffledData.shift();
 
-  const optionsSet = new Set<Option>([correctOption]);
+  if (correctOption) {
+    setCorrect(correctOption);
 
-  while (optionsSet.size < 4) {
-    const randomWrongOption =
-      data.af[Math.floor(Math.random() * data.af.length)];
-    optionsSet.add(randomWrongOption);
+    const allOptions = [...data.af];
+    const wrongOptions = allOptions.filter(
+      (option) => option !== correctOption,
+    );
+
+    const shuffledWrongOptions = shuffleArray(wrongOptions).slice(0, 3);
+    const options = [correctOption, ...shuffledWrongOptions];
+    const shuffledOptions = shuffleArray(options);
+
+    setOptions(shuffledOptions);
+  } else {
+    // TODO: Handle end game (no more options)
+    setOptions([]);
+    setCorrect(null);
+    console.log("No more options!");
   }
-
-  const allOptions = Array.from(optionsSet);
-  const shuffledOptions = shuffleArray(allOptions);
-  setOptions(shuffledOptions);
 };
